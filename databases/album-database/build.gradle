@@ -25,7 +25,12 @@ task openTunnel {
     doLast {
         println 'Opening Tunnel'
         Thread.start {
-            tunnelProcess = "cf ssh -N -L 63306:${getMysqlHost("album-service", "album-database")}:3306 album-service".execute()
+            println 'inside thread.Start'
+
+           // tunnelProcess = "cf ssh -N -L 63306:${getMysqlHost("album-service", "album-database")}:3306 album-service".execute()
+
+            tunnelProcess = "cf ssh -N -L 63306:us-cdbr-iron-east-03.cleardb.net:3306 album-service".execute()
+
         }
 
         sleep 5_000L

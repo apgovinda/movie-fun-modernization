@@ -35,6 +35,10 @@ ext.setupProdFlywayExtension = { extension, cfAppName, databaseInstanceName ->
 ext.getMysqlHost = { cfAppName, databaseInstanceName ->
     def mysqlCredentials = getMysqlCredentials(cfAppName, databaseInstanceName)
 
+    println '==============='
+    println mysqlCredentials["hostname"]
+    println '==============='
+
     return mysqlCredentials["hostname"]
 }
 
